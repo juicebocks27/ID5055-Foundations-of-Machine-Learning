@@ -1,0 +1,26 @@
+Visualisation
+scatterplot using seaborn with x = longitude, y = latitude and median house, hue values
+
+Normalize the data
+train_test_split
+X = homedata[[langitude, latitude]]
+y = home_data[[median_house_value]]
+
+from sklearn import preprocessing
+X_train_norm = prerocessing.normalize(X_train)
+Similar for X_test_norm
+
+Fitting and evaluating the model
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters = 3, random_state = 0, n_init = 'auto')
+kmeans.fit(X_train_norm
+
+sns.scattterplot(data = X_train, x = 'longitude', y = 'longitude', hue=kmeans.labels_)
+
+
+from sklearn.metrics import silhouette score
+silhouette_score(X_train_norm, kmeans.labels_,metrics = 'euclidean'
+
+
+exercise :
+Run for different values within interval [2,7] and identify best k
